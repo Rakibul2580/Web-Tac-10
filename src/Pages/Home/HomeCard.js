@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const HomeCard = ({ item }) => {
   const { image_url, id, title } = item;
   return (
-    <div className="border max-w-xs w-full rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100">
+    <div className="max-w-xs w-full rounded-md shadow-md dark:bg-gray-100 dark:text-gray-900">
       <img
         src={image_url}
         alt=""

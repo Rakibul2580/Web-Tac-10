@@ -27,7 +27,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="z-10 p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 sm:px-10 sm:mx-12 lg:rounded-md dark:bg-gray-900">
+        <div className="z-10 p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 sm:px-10 sm:mx-12 lg:rounded-md dark:bg-gray-300">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {items.map((item) => (
               <HomeCard key={item.id} item={item}></HomeCard>
