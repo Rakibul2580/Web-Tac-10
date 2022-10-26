@@ -1,9 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
+import Blog from "../../Pages/Blog/Blog";
+import Courses from "../../Pages/Courses/Courses";
+import Detail from "../../Pages/Detail/Detail";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
+import Faq from "../../Pages/Faq/Faq";
 import Home from "../../Pages/Home/Home";
-import Home2 from "../../Pages/Home2/Home2";
-import Home3 from "../../Pages/Home3/Home3";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
 
@@ -14,8 +16,22 @@ export const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { path: "/", element: <Home /> },
-      { path: "/home2", element: <Home2 /> },
-      { path: "/home3", element: <Home3 /> },
+      {
+        path: "/courses",
+        element: <Courses />,
+      },
+      {
+        path: "/courses/detail/:id",
+        loader: ({ params }) => {
+          return fetch(
+            `https://math-server-side-rakibul2580.vercel.app/data/${params.id}`
+          );
+        },
+
+        element: <Detail />,
+      },
+      { path: "/faq", element: <Faq /> },
+      { path: "/blog", element: <Blog /> },
       { path: "/login", element: <Login /> },
       { path: "/register", element: <Register /> },
     ],
