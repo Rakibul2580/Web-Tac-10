@@ -20,7 +20,7 @@ const Sidebar = ({ items }) => {
               <FaUserGraduate className="w-10 h-auto"></FaUserGraduate>
             )}
             <div>
-              <h2 className="text-lg font-semibold">{user.displayName}</h2>
+              <h2 className="text-lg font-semibold">{user?.displayName}</h2>
               <span className="flex items-center space-x-1">
                 <Link
                   to="/"

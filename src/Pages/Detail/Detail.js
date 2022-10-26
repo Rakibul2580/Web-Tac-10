@@ -1,12 +1,12 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const Detail = () => {
-  const { d_img, History, title } = useLoaderData();
+  const { d_img, History, title, id } = useLoaderData();
 
   return (
     <div className=" dark:text-gray-800">
-      <div className="container flex flex-col mx-auto lg:flex-row divide-x">
+      <div className="container flex flex-col mx-auto my-5 lg:flex-row divide-x">
         <div className="w-full lg:w-1/3 flex justify-center items-center">
           <img src={d_img} />
         </div>
@@ -25,9 +25,12 @@ const Detail = () => {
           </svg>
           <h2 className="text-3xl font-semibold leading-none">{title}</h2>
           <p className="mt-4 mb-8 text-sm">{History}</p>
-          <button className="self-start px-10 py-3 text-lg font-medium rounded-3xl dark:bg-violet-400 dark:text-gray-900">
+          <Link
+            to={`/checkout/${id}`}
+            className="self-start px-10 py-3 text-lg font-medium rounded-3xl dark:bg-violet-400 dark:text-gray-900"
+          >
             Get started
-          </button>
+          </Link>
         </div>
       </div>
     </div>
