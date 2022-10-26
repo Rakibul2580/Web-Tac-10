@@ -6,7 +6,7 @@ const Detail = () => {
 
   return (
     <div className=" dark:text-gray-800">
-      <div className="container flex flex-col mx-auto lg:flex-row">
+      <div className="container flex flex-col mx-auto lg:flex-row divide-x">
         <div className="w-full lg:w-1/3 flex justify-center items-center">
           <img src={d_img} />
         </div>
