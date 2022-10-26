@@ -190,11 +190,18 @@ const Header = () => {
             </li>
             {user?.uid ? (
               <>
-                <Link to="/">
+                <Link to="/" className="flex justify-center">
                   {user?.photoURL ? (
-                    <img src={user.photoURL} alt="" />
+                    <img
+                      src={user.photoURL}
+                      alt=""
+                      title={user.displayName}
+                      className="rounded-full w-12 h-auto mr-5"
+                    />
                   ) : (
-                    <FaUserGraduate></FaUserGraduate>
+                    <span title={user.displayName}>
+                      <FaUserGraduate className="w-10 h-auto mr-5"></FaUserGraduate>
+                    </span>
                   )}
                 </Link>
                 <Link
