@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import LoginImg from "./38435-register.gif";
@@ -8,33 +9,44 @@ const Login = () => {
     useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+  const [error, setError] = useState("");
   const from = location?.state?.from?.pathname || "/";
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
+    setError("");
     signIn(email, password)
       .then((result) => {
         form.reset();
+        toast.success("Login Success");
         navigate(from, { replace: true });
+        form.reset();
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        toast.error("Login unsuccessful");
+        setError(error.message);
+      });
   };
   const handleGoogle = () => {
+    setError("");
     signInWithGoogle()
       .then((result) => {
+        toast.success("Login Success");
         navigate(from, { replace: true });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => setError(error.message));
   };
 
   const handleGitHub = () => {
+    setError("");
     signInWithGitHub()
       .then((result) => {
+        toast.success("Login Success");
         navigate(from, { replace: true });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => setError(error.message));
   };
   return (
     <section className="py-6 dark:bg-white dark:text-gray-900">
@@ -77,6 +89,7 @@ const Login = () => {
               <button className="block w-full p-3 text-center rounded-sm dark:text-gray-900 dark:bg-violet-400">
                 Sign in
               </button>
+              <p className="mt-2 text-red-500">{error}</p>
             </form>
             <div className="flex items-center pt-4 space-x-1">
               <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
