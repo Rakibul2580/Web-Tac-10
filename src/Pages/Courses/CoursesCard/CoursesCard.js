@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const CoursesCard = ({ item }) => {
-  const { id, title, image_url, details } = item;
+  const { id, title, image_url } = item;
   return (
     <div className="max-w-full rounded-md shadow-md dark:bg-gray-100 dark:text-gray-900">
       <img
