@@ -18,7 +18,7 @@
 
 #### Firebase is an app development platform that helps you build and grow apps and games users love. Backed by Google and trusted by millions of businesses around the world.
 
-##### In the course details page there is a download icon in the right side at top. To download the pdf file click on the download button in the right side at the top. And to see the checkout page click on the Get premium Access button in the right side at the bottom.
+##### In the course details page there is . To download the pdf file click on the download button in the right side at the top. And to see the checkout page click on the Get premium Access button in the right side at the bottom.
 
 ##### I've created this project based on learning web development
 

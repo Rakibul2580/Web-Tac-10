@@ -4,6 +4,8 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const Detail = () => {
   const { image_url, details, title, id } = useLoaderData();
+
+  //pdf download function
   const componentRef = useRef();
   const handlePdf = useReactToPrint({
     content: () => componentRef.current,

@@ -6,6 +6,8 @@ import { FaUserGraduate } from "react-icons/fa";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   const naviget = useNavigate();
+
+  // log out function
   const handlelogOut = () => {
     logOut();
     naviget("/");

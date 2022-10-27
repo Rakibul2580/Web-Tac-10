@@ -5,12 +5,15 @@ import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import LoginImg from "./38435-register.gif";
 
 const Login = () => {
+  // add auth contexts function
   const { signIn, signInWithGoogle, signInWithGitHub } =
     useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const from = location?.state?.from?.pathname || "/";
+
+  //login with email and password function
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -29,6 +32,8 @@ const Login = () => {
         setError(error.message);
       });
   };
+
+  // login with google function
   const handleGoogle = () => {
     setError("");
     signInWithGoogle()
@@ -39,6 +44,7 @@ const Login = () => {
       .catch((error) => setError(error.message));
   };
 
+  // login with github function
   const handleGitHub = () => {
     setError("");
     signInWithGitHub()

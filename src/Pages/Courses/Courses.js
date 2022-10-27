@@ -4,7 +4,9 @@ import CoursesCard from "./CoursesCard/CoursesCard";
 import Sidebar from "./Sidebar/Sidebar";
 
 const Courses = () => {
+  //lode data use
   const { items } = useContext(AuthContext);
+
   return (
     <div className="block sm:flex justify-center">
       <div className="mt-5 mx-3">

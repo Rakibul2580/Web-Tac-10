@@ -5,11 +5,14 @@ import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import RegisterImg from "./11067-registration-animation.gif";
 
 const Register = () => {
+  // add auth context function
   const { signUp, signInWithGoogle, signInWithGitHub, updatePro } =
     useContext(AuthContext);
   const navigate = useNavigate();
 
   const [error, setError] = useState("");
+
+  // register with email and password
   const handleLogin = (e) => {
     setError("");
     e.preventDefault();
@@ -31,6 +34,7 @@ const Register = () => {
       });
   };
 
+  // register with google account
   const handleGoogle = () => {
     setError("");
     signInWithGoogle()
@@ -44,6 +48,7 @@ const Register = () => {
       });
   };
 
+  //register with github account
   const handleGitHub = () => {
     setError("");
     signInWithGitHub()
