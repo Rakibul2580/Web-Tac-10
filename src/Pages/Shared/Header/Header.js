@@ -154,7 +154,7 @@ const Header = () => {
           </label>
           <ul
             tabIndex={0}
-            className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-gray-900 rounded-box w-52"
+            className="mt-3 p-2 shadow menu menu-compact dropdown-content text-gray-900 bg-gray-100 rounded-box w-52"
           >
             <li className="flex">
               <NavLink
