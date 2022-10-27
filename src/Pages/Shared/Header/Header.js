@@ -88,16 +88,24 @@ const Header = () => {
             <>
               <Link to="/">
                 {user?.photoURL ? (
-                  <img
-                    src={user.photoURL}
-                    alt=""
-                    title={user.displayName}
-                    className="rounded-full w-12 h-auto mr-5"
-                  />
+                  <div
+                    className="tooltip tooltip-bottom z-10"
+                    data-tip={user?.displayName}
+                  >
+                    <button>
+                      <img
+                        src={user.photoURL}
+                        alt=""
+                        className="rounded-full w-12 h-auto mr-5"
+                      />
+                    </button>
+                  </div>
                 ) : (
-                  <span title={user.displayName}>
-                    <FaUserGraduate className="w-10 h-auto mr-5"></FaUserGraduate>
-                  </span>
+                  <div className="tooltip" data-tip={user?.displayName}>
+                    <button>
+                      <FaUserGraduate className="w-10 h-auto mr-5"></FaUserGraduate>
+                    </button>
+                  </div>
                 )}
               </Link>
               <button
@@ -192,16 +200,24 @@ const Header = () => {
               <>
                 <Link to="/" className="flex justify-center">
                   {user?.photoURL ? (
-                    <img
-                      src={user.photoURL}
-                      alt=""
-                      title={user.displayName}
-                      className="rounded-full w-12 h-auto mr-5"
-                    />
+                    <div
+                      className="tooltip tooltip-bottom"
+                      data-tip={user?.displayName}
+                    >
+                      <button>
+                        <img
+                          src={user.photoURL}
+                          alt=""
+                          className="rounded-full w-12 h-auto mr-5"
+                        />
+                      </button>
+                    </div>
                   ) : (
-                    <span title={user.displayName}>
-                      <FaUserGraduate className="w-10 h-auto mr-5"></FaUserGraduate>
-                    </span>
+                    <div className="tooltip" data-tip={user?.displayName}>
+                      <button>
+                        <FaUserGraduate className="w-10 h-auto mr-5"></FaUserGraduate>
+                      </button>
+                    </div>
                   )}
                 </Link>
                 <Link

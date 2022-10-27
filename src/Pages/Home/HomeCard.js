@@ -8,14 +8,14 @@ const HomeCard = ({ item }) => {
       <img
         src={image_url}
         alt=""
-        className="saturate-200 bg-center bg-no-repeat bg-cover object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500"
+        className="saturate-200 w-full rounded-t-md h-96 p-3 dark:bg-gray-200"
       />
       <div className="flex flex-col justify-between p-6 space-y-8">
         <div className="space-y-2">
           <h2 className="text-3xl font-semibold tracking-wide">{title}</h2>
         </div>
         <Link
-          to="/"
+          to="/courses"
           className="transition hover:delay-150 flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-400 dark:text-gray-900"
         >
           Read more
