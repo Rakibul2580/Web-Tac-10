@@ -8,14 +8,15 @@ const Home = () => {
   return (
     <div className="dark:text-gray-100">
       <div className="flex flex-col mx-auto overflow-hidden">
-        <div className="saturate-200 bg-center bg-no-repeat bg-cover bg-[url('https://png.pngtree.com/thumb_back/fh260/background/20201023/pngtree-technological-background-vector-illustration-matrix-binary-computer-code-image_432632.jpg')]">
+        <div className="saturate-200 bg-center bg-no-repeat bg-cover bg-[url('https://t4.ftcdn.net/jpg/02/18/18/55/360_F_218185587_P4zituDtWJOfClUKL6merI0BgLMIxoeC.jpg')]">
           <div className="container flex flex-col items-center px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-32 md:px-10 lg:px-32 dark:text-gray-900">
             <h1 className="text-5xl font-bold leading-none sm:text-6xl xl:max-w-3xl dark:text-white">
-              Provident blanditiis cum exercitationem
+              best music for coding developers recommend
             </h1>
             <p className="mt-6 mb-8 text-lg sm:mb-12 xl:max-w-3xl dark:text-white">
-              Cupiditate minima voluptate temporibus quia? Architecto beatae
-              esse ab amet vero eaque explicabo!
+              Learning arbitrary coding concepts can get boring after some time.
+              To keep your motivation up, think of all the things you've always
+              wanted to create.
             </p>
             <div className="flex flex-wrap justify-center">
               <Link

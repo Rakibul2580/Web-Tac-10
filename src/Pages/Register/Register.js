@@ -22,7 +22,7 @@ const Register = () => {
       .then((result) => {
         toast.success("Register Success");
         updatePro(name, photo);
-        form.resat();
+        form.reset();
         navigate("/");
       })
       .catch((error) => {
