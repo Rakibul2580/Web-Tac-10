@@ -1,12 +1,14 @@
 import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import RegisterImg from "./11067-registration-animation.gif";
 
 const Register = () => {
   const { signUp, signInWithGoogle, signInWithGitHub, updatePro } =
     useContext(AuthContext);
+  const navigate = useNavigate();
+
   const [error, setError] = useState("");
   const handleLogin = (e) => {
     setError("");
@@ -18,25 +20,41 @@ const Register = () => {
     const password = form.password.value;
     signUp(email, password)
       .then((result) => {
+        toast.success("Register Success");
         updatePro(name, photo);
-        toast.success("Login Success");
         form.resat();
+        navigate("/");
       })
-      .catch((error) => setError(error.message));
+      .catch((error) => {
+        setError(error.message);
+        toast.success("Register Unsuccess");
+      });
   };
 
   const handleGoogle = () => {
     setError("");
     signInWithGoogle()
-      .then((result) => {})
-      .catch((error) => setError(error.message));
+      .then((result) => {
+        toast.success("Register Success");
+        navigate("/");
+      })
+      .catch((error) => {
+        setError(error.message);
+        toast.success("Register Unsuccess");
+      });
   };
 
   const handleGitHub = () => {
     setError("");
     signInWithGitHub()
-      .then((result) => {})
-      .catch((error) => setError(error.message));
+      .then((result) => {
+        toast.success("Register Success");
+        navigate("/");
+      })
+      .catch((error) => {
+        setError(error.message);
+        toast.success("Register Unsuccess");
+      });
   };
   return (
     <section className="py-6 dark:bg-white dark:text-gray-800">

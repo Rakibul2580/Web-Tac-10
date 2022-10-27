@@ -13,8 +13,12 @@ const Header = () => {
   return (
     <header className="p-3 transition bg-gradient-to-r from-violet-500 to-fuchsia-500 dark:text-gray-100 hover:bg-gradient-to-r hover:from-fuchsia-500 hover:to-violet-500 hover:dark:text-gray-100">
       <div className="container flex justify-between h-16 mx-auto">
-        <Link to="/" className="flex items-center p-2 text-5xl font-bold">
-          Math
+        <Link to="/" className="flex items-center">
+          <img
+            src="https://www.cincinnatiwebtec.com/wp-content/uploads/2019/09/webtec_logo_color.png"
+            alt=""
+            className="lg:52 w-40"
+          />
         </Link>
         <label className="swap swap-rotate">
           <input type="checkbox" />

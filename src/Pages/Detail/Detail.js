@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useReactToPrint } from "react-to-print";
 import { Link, useLoaderData } from "react-router-dom";
 
 const Detail = () => {
   const { image_url, details, title, id } = useLoaderData();
+  const componentRef = useRef();
+  const handlePdf = useReactToPrint({
+    content: () => componentRef.current,
+    documentTitle: "Your-Course",
+    onAfterprint: () => alert("good job"),
+  });
 
   return (
-    <div className=" dark:text-gray-800">
+    <div ref={componentRef} className=" dark:text-gray-800">
       <div className="container flex flex-col mx-auto my-5 lg:flex-row divide-x">
         <div className="w-full lg:w-1/3 flex justify-center items-center">
           <img src={image_url} />
@@ -25,12 +32,20 @@ const Detail = () => {
           </svg>
           <h2 className="text-3xl font-semibold leading-none">{title}</h2>
           <p className="mt-4 mb-8 text-sm">{details}</p>
-          <Link
-            to={`/checkout/${id}`}
-            className="self-start px-10 py-3 text-lg font-medium rounded-3xl dark:bg-violet-400 dark:text-gray-900"
-          >
-            Get started
-          </Link>
+          <div className="md:flex">
+            <Link
+              to={`/checkout/${id}`}
+              className="self-start px-10 py-3 text-lg font-medium rounded-3xl dark:bg-violet-400 dark:text-gray-900"
+            >
+              Get Checkout
+            </Link>
+            <button
+              onClick={handlePdf}
+              className="self-start px-10 py-3 text-lg font-medium rounded-3xl dark:bg-violet-400 dark:text-gray-900 mt-5 md:mt-0 md:ml-5"
+            >
+              download pdf
+            </button>
+          </div>
         </div>
       </div>
     </div>
