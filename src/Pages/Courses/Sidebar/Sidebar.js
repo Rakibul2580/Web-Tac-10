@@ -23,7 +23,7 @@ const Sidebar = ({ items }) => {
               <h2 className="text-lg font-semibold">{user?.displayName}</h2>
               <span className="flex items-center space-x-1">
                 <Link
-                  to="/"
+                  to="/profile"
                   className="text-xs hover:underline dark:text-gray-400"
                 >
                   View profile
