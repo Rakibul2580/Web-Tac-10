@@ -8,12 +8,11 @@ const CoursesCard = ({ item }) => {
       <img
         src={image_url}
         alt=""
-        className="saturate-200 bg-center bg-no-repeat bg-cover object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500"
+        className="saturate-200 w-full p-2 rounded-t-md h-72 dark:bg-gray-500"
       />
       <div className="flex flex-col justify-between p-6 space-y-8">
         <div className="space-y-2">
           <h2 className="text-3xl font-semibold tracking-wide">{title}</h2>
-          <p className="dark:text-gray-100">{details}</p>
         </div>
         <Link
           to={`detail/${id}`}
