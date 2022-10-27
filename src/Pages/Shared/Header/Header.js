@@ -226,12 +226,12 @@ const Header = () => {
                     </div>
                   )}
                 </Link>
-                <Link
-                  to="/login"
+                <button
+                  onClick={handlelogOut}
                   className="self-center px-8 mt-3 py-3 font-semibold rounded dark:bg-violet-400 dark:text-gray-900"
                 >
                   Sign out
-                </Link>
+                </button>
               </>
             ) : (
               <>
