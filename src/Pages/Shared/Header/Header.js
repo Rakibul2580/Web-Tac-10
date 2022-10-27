@@ -86,7 +86,7 @@ const Header = () => {
         <div className="items-center flex-shrink-0 hidden md:flex">
           {user?.uid ? (
             <>
-              <Link to="/">
+              <Link to="/profile">
                 {user?.photoURL ? (
                   <div
                     className="tooltip tooltip-bottom z-10"
@@ -198,7 +198,7 @@ const Header = () => {
             </li>
             {user?.uid ? (
               <>
-                <Link to="/" className="flex justify-center">
+                <Link to="/profile" className="flex justify-center">
                   {user?.photoURL ? (
                     <div
                       className="tooltip tooltip-bottom"

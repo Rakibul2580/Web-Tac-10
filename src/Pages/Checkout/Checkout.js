@@ -48,16 +48,18 @@ const Checkout = () => {
         >
           <div className="relative flex flex-col h-full p-5 bg-white rounded-sm lg:items-center lg:flex-row">
             <div className="mb-6 mr-6 lg:mb-0">
-              <div className="flex items-center justify-center w-20 h-20 rounded-full bg-indigo-50 lg:w-32 lg:h-32">
-                <img src={image_url} alt="" />
-              </div>
+              <img
+                src={user?.photoURL}
+                alt=""
+                className="flex items-center justify-center w-20 h-20 rounded-full bg-indigo-50 lg:w-32 lg:h-32"
+              />
             </div>
             <div className="flex-col justify-center ">
               <h6 className="mb-2 text-3xl font-bold leading-5">
-                {user?.displayName}
+                Name: {user?.displayName}
               </h6>
               <p className="my-3 text-md font-medium text-red-400">
-                {user?.email}
+                Email: {user?.email}
               </p>
               <button
                 onClick={handlePdf}

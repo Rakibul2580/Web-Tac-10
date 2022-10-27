@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import RegisterImg from "./11067-registration-animation.gif";
@@ -6,7 +7,9 @@ import RegisterImg from "./11067-registration-animation.gif";
 const Register = () => {
   const { signUp, signInWithGoogle, signInWithGitHub, updatePro } =
     useContext(AuthContext);
+  const [error, setError] = useState("");
   const handleLogin = (e) => {
+    setError("");
     e.preventDefault();
     const form = e.target;
     const name = form.username.value;
@@ -16,21 +19,24 @@ const Register = () => {
     signUp(email, password)
       .then((result) => {
         updatePro(name, photo);
+        toast.success("Login Success");
         form.resat();
       })
-      .catch((error) => console.log(error));
+      .catch((error) => setError(error.message));
   };
 
   const handleGoogle = () => {
+    setError("");
     signInWithGoogle()
       .then((result) => {})
-      .catch((error) => console.log(error));
+      .catch((error) => setError(error.message));
   };
 
   const handleGitHub = () => {
+    setError("");
     signInWithGitHub()
       .then((result) => {})
-      .catch((error) => console.log(error));
+      .catch((error) => setError(error.message));
   };
   return (
     <section className="py-6 dark:bg-white dark:text-gray-800">
@@ -99,6 +105,7 @@ const Register = () => {
               <button className="block w-full p-3 text-center rounded-sm dark:text-gray-900 dark:bg-violet-400">
                 Sign up
               </button>
+              <p className="mt-2 text-red-500">{error}</p>
             </form>
             <div className="flex items-center pt-4 space-x-1">
               <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
